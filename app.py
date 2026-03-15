@@ -8,8 +8,12 @@ def identity(x):
 
 app = Flask(__name__)
 
-xgbmodel = pickle.load(open("xgb_model.pkl", "rb"))
-columns = pickle.load(open("model_columns.pkl", "rb"))
+try:
+    xgbmodel = pickle.load(open("xgb_model.pkl", "rb"))
+    columns = pickle.load(open("model_columns.pkl", "rb"))
+    print("Model loaded successfully")
+except Exception as e:
+    print("Model loading failed:", e)
 
 
 @app.route('/')
