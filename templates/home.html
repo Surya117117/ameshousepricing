@@ -1,3 +1,214 @@
-<h1>
-    Welcome to the Home Page!
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI House Price Predictor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#1f4037,#99f2c8);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+header{
+text-align:center;
+margin-bottom:40px;
+}
+
+header h1{
+font-size:40px;
+font-weight:600;
+}
+
+header p{
+opacity:0.8;
+margin-top:8px;
+}
+
+.container{
+width:900px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.input-group{
+display:flex;
+flex-direction:column;
+}
+
+label{
+margin-bottom:6px;
+font-size:14px;
+}
+
+input,select{
+padding:12px;
+border-radius:8px;
+border:none;
+font-size:14px;
+}
+
+input:focus,select:focus{
+outline:none;
+box-shadow:0 0 5px rgba(255,255,255,0.8);
+}
+
+button{
+margin-top:30px;
+width:100%;
+padding:14px;
+font-size:16px;
+border:none;
+border-radius:10px;
+background:white;
+color:#1f4037;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+background:#e6fff6;
+}
+
+.result{
+margin-top:30px;
+text-align:center;
+font-size:26px;
+font-weight:500;
+background:rgba(255,255,255,0.2);
+padding:20px;
+border-radius:10px;
+}
+
+footer{
+margin-top:40px;
+font-size:14px;
+opacity:0.8;
+}
+
+@media(max-width:900px){
+
+.container{
+width:95%;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏠 AI House Price Predictor</h1>
+<p>Estimate property value instantly using machine learning</p>
+</header>
+
+<div class="container">
+
+<form action="/predict" method="POST">
+
+<div class="form-grid">
+
+<div class="input-group">
+<label>Lot Area (sqft)</label>
+<input type="number" name="Lot Area" required>
+</div>
+
+<div class="input-group">
+<label>Overall Quality</label>
+<select name="Overall Qual">
+<option value="1">1 - Very Poor</option>
+<option value="3">3 - Fair</option>
+<option value="5">5 - Average</option>
+<option value="7">7 - Good</option>
+<option value="9">9 - Excellent</option>
+<option value="10">10 - Luxury</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Year Built</label>
+<input type="number" name="Year Built" required>
+</div>
+
+<div class="input-group">
+<label>Living Area (sqft)</label>
+<input type="number" name="Gr Liv Area" required>
+</div>
+
+<div class="input-group">
+<label>Garage Capacity</label>
+<select name="Garage Cars">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Neighborhood</label>
+<select name="Neighborhood">
+<option value="OldTown">OldTown</option>
+<option value="NridgHt">NridgHt</option>
+<option value="StoneBr">StoneBr</option>
+<option value="NAmes">NAmes</option>
+<option value="CollgCr">CollgCr</option>
+<option value="Somerst">Somerst</option>
+<option value="Gilbert">Gilbert</option>
+<option value="Edwards">Edwards</option>
+<option value="BrkSide">BrkSide</option>
+<option value="Sawyer">Sawyer</option>
+</select>
+</div>
+
+</div>
+
+<button type="submit">Predict House Price</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+<footer>
+Built with Flask & Machine Learning
+</footer>
+
+</body>
+</html>
