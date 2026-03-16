@@ -21,23 +21,20 @@ The dataset includes features(82) some of them are:
 
 ## Model Performance:
 Evaluation metrics obtained during training:<br>
-for XGBoost:
--R² Score: 0.90
+for XGBoost:<br>
+-R² Score: 0.90<br>
+-MAE: 12231<br>
 
--MAE: 12231
+for SVR:<br>
+-R² Score: 0.86<br>
+-MAE: 13605<br>
 
-for SVR:
--R² Score: 0.86
-
--MAE: 13605
-
-for RidgeCV:
--R² Score: 0.84
-
--MAE: 15399
-
+for RidgeCV:<br>
+-R² Score: 0.84<br>
+-MAE: 15399<br>
+<br>
 (We choosed the best model for deployment..i.e XGBoost)
-
+<br>
 _The system includes:_<br>
 • Data preprocessing<br>
 • Feature engineering<br>
@@ -45,8 +42,9 @@ _The system includes:_<br>
 • Flask API for inference<br>
 • Web interface for user input<br>
 • Cloud deployment using Render<br>
+<br>
 
-## Architecture (Workflow):
+## Architecture (Workflow):<br>
 User Input  
 ↓  
 Flask API  
@@ -61,7 +59,7 @@ Displayed in Web UI
 
 
 
-## Tech Stack Used
+## Tech Stack Used<br>
 1.Python<br>
 2.Flask<br>
 3.XGBoost<br>
@@ -70,47 +68,30 @@ Displayed in Web UI
 6.HTML/CSS<br>
 7.Render(Deployment)<br>
 
-## Live Demo(Model Link)
+## Live Demo(Model Link)<br>
 
-**https://ameshousepricing.onrender.com**
+**https://ameshousepricing.onrender.com**<br>
 
-
-**Screenshot Section**
-
-
-## Screenshot Section
+## Screenshot Section<br>
 ![web Interface](https://github.com/Surya117117/ameshousepricing/blob/8d3ed2b7b4a1a775c1ef1e3a8fbbf187a0e6cf77/Screenshot%202026-03-16%20183950.png)
 ameshousepricing
 
 ## Project Structure
 
-ameshousepricing/
-
-│
-├── model/
-
-│ ├── xgb_model.pkl
-
-│ └── model_columns.pkl
-
-│
-
-├── templates/
-
-│ └── index.html
-
-│
-├── static/
-
-│ └── style.css
-
-│
-
-├── app.py
-
-├── requirements.txt
-
-├── README.md
-
-└── notebook.ipynb
+ameshousepricing/<br>
+│<br>
+├── model/<br>
+│ ├── xgb_model.pkl<br>
+│ └── model_columns.pkl<br>
+│<br>
+├── templates/<br>
+│ └── index.html<br>
+│<br>
+├── static/<br>
+│ └── style.css<br>
+│<br>
+├── app.py<br>
+├── requirements.txt<br>
+├── README.md<br>
+└── notebook.ipynb<br>
 
