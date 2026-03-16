@@ -25,7 +25,8 @@ def predict():
 
     data = request.form.to_dict()
     df = pd.DataFrame([data])
-    df = df.apply(pd.to_numeric, errors='ignore')
+    df = df.apply(pd.to_numeric, errors='coerce')
+    df = df.fillna(0)
     df = pd.get_dummies(df)
     df = df.reindex(columns=columns, fill_value=0)
 
