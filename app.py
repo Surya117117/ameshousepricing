@@ -8,28 +8,34 @@ def identity(x):
 
 app = Flask(__name__)
 
-# Load model
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "xgb_model.pkl")
+columns_path = os.path.join(BASE_DIR, "model_columns.pkl")
+
 try:
-    xgbmodel = pickle.load(open("xgb_model.pkl", "rb"))
-    columns = pickle.load(open("model_columns.pkl", "rb"))
+    with open(model_path, "rb") as f:
+        xgbmodel = pickle.load(f)
+    with open(columns_path, "rb") as f:
+        columns = pickle.load(f)
     print("Model loaded successfully")
+
 except Exception as e:
     print("Model loading failed:", e)
     raise e
-
 
 @app.route('/')
 def home():
     return render_template("home.html")
 
-
 @app.route('/predict', methods=['POST'])
 def predict():
+
     try:
         data = request.form.to_dict()
         df = pd.DataFrame([data])
         for col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
+
         df = df.fillna(0)
         df = pd.get_dummies(df)
         df = df.reindex(columns=columns, fill_value=0)
@@ -39,14 +45,13 @@ def predict():
             "home.html",
             prediction_text=f"Estimated House Price: ${output}"
         )
-
     except Exception as e:
         print("Prediction error:", e)
-
         return render_template(
             "home.html",
             prediction_text="Prediction failed. Check server logs."
         )
+
 
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
@@ -63,6 +68,7 @@ def predict_api():
         return jsonify({
             "prediction": prediction.tolist()
         })
+
     except Exception as e:
         return jsonify({
             "error": str(e)
