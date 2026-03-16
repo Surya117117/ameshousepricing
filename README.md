@@ -67,7 +67,7 @@ Displayed in Web UI
 6.HTML/CSS<br>
 7.Render(Deployment)<br>
 
-## Live Demo(Model Link)
+## Live Demo(Model Link)<br>
 **https://ameshousepricing.onrender.com**
 **Screenshot Section**
 
