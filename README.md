@@ -67,18 +67,19 @@ Displayed in Web UI
 6.HTML/CSS<br>
 7.Render(Deployment)<br>
 
-## Live Demo(Model Link)<br>
+## Live Demo(Model Link)
+
 **https://ameshousepricing.onrender.com**
+
+
 **Screenshot Section**
 
 
 ## Screenshot Section
 ![web Interface](https://github.com/Surya117117/ameshousepricing/blob/8d3ed2b7b4a1a775c1ef1e3a8fbbf187a0e6cf77/Screenshot%202026-03-16%20183950.png)
 ameshousepricing
->>>>>>> 562412c56b13c3a0319202bd5ee7b029fb35842a
->>>>>>> 
+
 ## Project Structure
-<<<<<<< HEAD
 
 ameshousepricing/
 │
