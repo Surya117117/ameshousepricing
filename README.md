@@ -21,15 +21,15 @@ The dataset includes features(82) some of them are:
 
 ## Model Performance:
 Evaluation metrics obtained during training:<br>
-for XGBoost:<br>
+for **XGBoost**:<br>
 -R² Score: 0.90<br>
 -MAE: 12231<br>
 
-for SVR:<br>
+for **SVR**:<br>
 -R² Score: 0.86<br>
 -MAE: 13605<br>
 
-for RidgeCV:<br>
+for **RidgeCV**:<br>
 -R² Score: 0.84<br>
 -MAE: 15399<br>
 <br>
