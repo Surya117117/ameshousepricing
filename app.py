@@ -2,6 +2,7 @@ import pickle
 import pandas as pd
 import numpy as np
 from flask import Flask, request, jsonify, render_template
+import os
 
 def identity(x):
     return x
@@ -14,11 +15,13 @@ try:
     print("Model loaded successfully")
 except Exception as e:
     print("Model loading failed:", e)
+    raise e
 
 
 @app.route('/')
 def home():
     return render_template("home.html")
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -31,24 +34,29 @@ def predict():
     df = df.reindex(columns=columns, fill_value=0)
 
     prediction = xgbmodel.predict(df)
+    price = np.exp(prediction[0])
+
     return render_template(
         "home.html",
-        prediction_text=f"The House price prediction is {prediction[0]}"
+        prediction_text=f"Predicted House Price: ${round(price,2)}"
     )
 
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
+
     data = request.json['data']
     df = pd.DataFrame([data])
+    df = df.apply(pd.to_numeric, errors='coerce')
+    df = df.fillna(0)
     df = pd.get_dummies(df)
     df = df.reindex(columns=columns, fill_value=0)
 
     prediction = xgbmodel.predict(df)
+    price = np.exp(prediction[0])
     return jsonify({
-        "prediction": prediction.tolist()
+        "prediction": float(price)
     })
 
-import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
