@@ -20,7 +20,7 @@ The dataset includes features(82) some of them are:
 - Neighborhood
 
 ## Model Performance:
-Evaluation metrics obtained during training:
+Evaluation metrics obtained during training:<br>
 for XGBoost:
 -R² Score: 0.90
 -MAE: 12231
@@ -35,13 +35,13 @@ for RidgeCV:
 
 (We choosed the best model for deployment..i.e XGBoost)
 
-_The system includes:_
-• Data preprocessing
-• Feature engineering
-• XGBoost regression model
-• Flask API for inference
-• Web interface for user input
-• Cloud deployment using Render
+_The system includes:_<br>
+• Data preprocessing<br>
+• Feature engineering<br>
+• XGBoost regression model<br>
+• Flask API for inference<br>
+• Web interface for user input<br>
+• Cloud deployment using Render<br>
 
 ## Architecture (Workflow):
 User Input  
@@ -59,13 +59,13 @@ Displayed in Web UI
 
 
 ## Tech Stack Used
-1.Python
-2.Flask
-3.XGBoost
-4.Scikit_learn
-5.Pandas
-6.HTML/CSS
-7.Render(Deployment)
+1.Python<br>
+2.Flask<br>
+3.XGBoost<br>
+4.Scikit_learn<br>
+5.Pandas<br>
+6.HTML/CSS<br>
+7.Render(Deployment)<br>
 
 ## Live Demo(Model Link)
 **https://ameshousepricing.onrender.com**
@@ -74,20 +74,20 @@ Displayed in Web UI
 
 ## Project Structure
 
-ameshousepricing
+ameshousepricing/
+│
+├── model/
+│ ├── xgb_model.pkl
+│ └── model_columns.pkl
+│
+├── templates/
+│ └── index.html
+│
+├── static/
+│ └── style.css
 │
 ├── app.py
 ├── requirements.txt
-├── Procfile
 ├── README.md
-│
-├── model
-│   ├── xgb_model.pkl
-│   └── model_columns.pkl
-│
-├── templates
-│   └── home.html
-│
-└── notebooks
-    └── model_training.ipynb
+└── notebook.ipynb
 
