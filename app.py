@@ -12,6 +12,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(BASE_DIR, "xgb_model.pkl")
 columns_path = os.path.join(BASE_DIR, "model_columns.pkl")
 
+print("Starting Flask App...")
+print("Current directory:", BASE_DIR)
+print("Files:", os.listdir(BASE_DIR))
 try:
     with open(model_path, "rb") as f:
         xgbmodel = pickle.load(f)
