@@ -23,14 +23,17 @@ The dataset includes features(82) some of them are:
 Evaluation metrics obtained during training:<br>
 for XGBoost:
 -R² Score: 0.90
+
 -MAE: 12231
 
 for SVR:
 -R² Score: 0.86
+
 -MAE: 13605
 
 for RidgeCV:
 -R² Score: 0.84
+
 -MAE: 15399
 
 (We choosed the best model for deployment..i.e XGBoost)
@@ -82,19 +85,32 @@ ameshousepricing
 ## Project Structure
 
 ameshousepricing/
+
 │
 ├── model/
+
 │ ├── xgb_model.pkl
+
 │ └── model_columns.pkl
+
 │
+
 ├── templates/
+
 │ └── index.html
+
 │
 ├── static/
+
 │ └── style.css
+
 │
+
 ├── app.py
+
 ├── requirements.txt
+
 ├── README.md
+
 └── notebook.ipynb
 
