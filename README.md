@@ -69,9 +69,11 @@ Displayed in Web UI
 
 ## Live Demo(Model Link)
 **https://ameshousepricing.onrender.com**
+**Screenshot Section**
+
 
 ## Project Structure
-
+![web Interface](https://github.com/Surya117117/ameshousepricing/blob/8d3ed2b7b4a1a775c1ef1e3a8fbbf187a0e6cf77/Screenshot%202026-03-16%20183950.png)
 ameshousepricing
 │
 ├── app.py
