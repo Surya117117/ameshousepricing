@@ -69,10 +69,13 @@ Displayed in Web UI
 
 ## Live Demo(Model Link)
 **https://ameshousepricing.onrender.com**
+**Screenshot Section**
+
 
 ## Screenshot Section
 
 ## Project Structure
+<<<<<<< HEAD
 
 ameshousepricing/
 │
@@ -85,6 +88,10 @@ ameshousepricing/
 │
 ├── static/
 │ └── style.css
+=======
+![web Interface](https://github.com/Surya117117/ameshousepricing/blob/8d3ed2b7b4a1a775c1ef1e3a8fbbf187a0e6cf77/Screenshot%202026-03-16%20183950.png)
+ameshousepricing
+>>>>>>> 562412c56b13c3a0319202bd5ee7b029fb35842a
 │
 ├── app.py
 ├── requirements.txt
