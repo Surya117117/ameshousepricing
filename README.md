@@ -70,6 +70,8 @@ Displayed in Web UI
 ## Live Demo(Model Link)
 **https://ameshousepricing.onrender.com**
 
+## Screenshot Section
+
 ## Project Structure
 
 ameshousepricing
